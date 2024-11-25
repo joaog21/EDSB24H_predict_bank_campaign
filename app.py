@@ -181,7 +181,6 @@ p {
     color: white !important;
 }
 """
-
 # Create the Gradio interface
 iface = gr.Interface(
     fn=predict_success,
@@ -199,8 +198,12 @@ iface = gr.Interface(
         gr.Checkbox(label="Is the client single?"),
         gr.Number(label="Number of contacts performed before this campaign and for this client"),
         gr.Checkbox(label="If the client was targeted in a previous campaign was it a success?"),
-        gr.Number(label="Last contact day of the month",
+        gr.Number(label="Age of the client",
                 minimum=1, 
+                maximum=120,
+                step=1),
+        gr.Number(label="Last contact day of the month",
+                minimum=0, 
                 maximum=31,
                 step=1),
         gr.Dropdown(
