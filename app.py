@@ -204,13 +204,13 @@ iface = gr.Interface(
                 maximum=31,
                 step=1),
         gr.Dropdown(
+            label="Day of the Week of last contact",
+            choices=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        ),
+        gr.Dropdown(
             label="Month",
             choices=['January', 'February', 'March', 'April', 'May', 'June', 
                     'July', 'August', 'September', 'October', 'November', 'December']
-        ),
-        gr.Dropdown(
-            label="Day of the Week of last contact",
-            choices=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
         )
     ],
     outputs=gr.Textbox(label="Predicted outcome of the campaign for the client"),
@@ -221,4 +221,5 @@ iface = gr.Interface(
 )
 
 if __name__ == "__main__":
-    iface.launch()
+    iface.launch(share=True)
+
