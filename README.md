@@ -1,11 +1,11 @@
 ---
 title: Predict Bank marketing campaign
 emoji: 🏦
-colorFrom: indigo
-colorTo: gray
+colorFrom: gray
+colorTo: blue
 sdk: gradio
 sdk_version: 5.5.0
 app_file: app.py
 pinned: false
-short_description: Image Recognition
+short_description: Prediction marketing
 ---
