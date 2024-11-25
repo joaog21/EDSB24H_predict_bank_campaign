@@ -150,12 +150,12 @@ h1 {
     font-size: 32px !important;
     font-weight: bold !important;
     text-align: center !important;
-    color: black !important;
+    color: white !important;
 }
 
 label {
     font-size: 18px !important;
-    color: black !important;
+    color: white !important;
 }
 
 input[type="number"] {
@@ -178,7 +178,7 @@ textarea {
 
 p {
     font-size: 16px !important;
-    color: black !important;
+    color: white !important;
 }
 """
 
