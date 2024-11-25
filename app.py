@@ -189,7 +189,7 @@ iface = gr.Interface(
         gr.Number(label="Number of contacts performed during this campaign for this client:"),
         gr.Checkbox(label="Contact made by cellular?"),
         gr.Number(label="Last contact duration, in seconds"),
-        gr.Checkbox(
+        gr.Dropdown(
             label="Day of the Week of last contact",
             choices=["Secondary", "Tertiary", "other"]
         ),
