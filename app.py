@@ -152,7 +152,7 @@ h1 {
     font-size: 32px !important;
     font-weight: bold !important;
     text-align: center !important;
-    color: white !important;
+    color: black !important;
 }
 
 label {
