@@ -107,7 +107,7 @@ def predict_success(campaign, cellular, duration, education,
        'month_may', 'month_nov', 'month_oct', 'poutcome_success', 'previous',
        'age', 'Week_Day_Wed']].copy()
      
-    train = pd.read_parquet(r'Datasets\\parquet\\bank_feature_selection.parquet')
+    train = pd.read_parquet(r'Datasets\parquet\bank_feature_selection.parquet')
     X2_train = train.drop(['y'], axis = 1)
     y2_train = train['y']
 
