@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 import gradio as gr
 
 def generate_weekday_dataframe(week_day):
@@ -113,7 +113,7 @@ def predict_success(campaign, cellular, duration, education,
     X2_train = train.drop(['y'], axis = 1)
     y2_train = train['y']
 
-    scaler = MinMaxScaler().fit(X2_train)
+    scaler = StandardScaler().fit(X2_train)
     test = pd.DataFrame(scaler.transform(data), columns = data.columns, index = data.index)
 
     final_model_gb = GradientBoostingClassifier(learning_rate = 0.01,
