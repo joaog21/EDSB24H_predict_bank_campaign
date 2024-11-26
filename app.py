@@ -106,8 +106,10 @@ def predict_success(campaign, cellular, duration, education,
        'marital_single', 'month_apr', 'month_aug', 'month_jul', 'month_mar',
        'month_may', 'month_nov', 'month_oct', 'poutcome_success', 'previous',
        'age', 'Week_Day_Wed']].copy()
-     
-    train = pd.read_parquet(r'Datasets\parquet\bank_feature_selection.parquet')
+
+    parquet_url = "https://github.com/joaog21/EDSB24H_predict_bank_campaign/raw/refs/heads/main/Datasets/parquet/bank_feature_selection.parquet"
+    train = pd.read_parquet(parquet_url, engine='pyarrow')  
+    #train = pd.read_parquet(r'Datasets\parquet\bank_feature_selection.parquet')
     X2_train = train.drop(['y'], axis = 1)
     y2_train = train['y']
 
