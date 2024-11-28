@@ -116,16 +116,15 @@ def predict_success(campaign, cellular, duration, education,
     scaler = StandardScaler().fit(X2_train)
     test = pd.DataFrame(scaler.transform(data), columns = data.columns, index = data.index)
 
-    final_model_gb = GradientBoostingClassifier(learning_rate = 0.01,
-                                            max_depth = 5,
-                                            max_features = 19, 
-                                            min_samples_leaf = 50,
-                                            min_samples_split = 2,
-                                            n_estimators = 500,
+    final_model_rf = RandomForestClassifier(n_estimators=30,
+                                            min_samples_leaf = 5, 
+                                            min_samples_split = 12,
+                                            max_features= 'log2', 
+                                            bootstrap= False, 
                                             random_state = 99)
     
 
-    final_model = final_model_gb.fit(X2_train, y2_train)
+    final_model = final_model_rf.fit(X2_train, y2_train)
     final_model.predict(test)
     predict_proba_test = final_model.predict_proba(test)
     predict_proba_test
