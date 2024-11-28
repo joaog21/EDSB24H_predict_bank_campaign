@@ -132,7 +132,7 @@ def predict_success(campaign, cellular, duration, education,
     final_pred = []
 
     for value in predict_proba_test[:,1]:
-       if (value>=0.491400):
+       if (value>=0.503457):
            final_pred.append(1)
        else:
          final_pred.append(0)
