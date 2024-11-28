@@ -138,7 +138,7 @@ def predict_success(campaign, cellular, duration, education,
          final_pred.append(0)
 
     prediction = "Success" if final_pred == 1 else "Failure"
-    return prediction
+    return final_pred
 
 # Custom CSS to adjust font sizes and text colors
 css = """
