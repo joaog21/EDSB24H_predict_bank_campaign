@@ -107,14 +107,14 @@ def predict_success(campaign, cellular, duration, education,
        'month_may', 'month_nov', 'month_oct', 'poutcome_success', 'previous',
        'age', 'Week_Day_Wed']].copy()
 
-    parquet_url = "https://github.com/joaog21/EDSB24H_predict_bank_campaign/blob/126c40bdc3c320106b70e2d123b75af4f6ba8f91/Datasets/parquet/bank_trained.parquet"
+    parquet_url = "https://github.com/joaog21/EDSB24H_predict_bank_campaign/raw/126c40bdc3c320106b70e2d123b75af4f6ba8f91/Datasets/parquet/bank_trained.parquet"
     
     train = pd.read_parquet(parquet_url, engine='pyarrow')  
     #train = pd.read_parquet(r'Datasets\parquet\bank_feature_selection.parquet')
-    X2_train = train.drop(['y'], axis = 1)
+    #X2_train = train.drop(['y'], axis = 1)
     y2_train = train['y']
 
-    scaler = StandardScaler().fit(X2_train)
+    scaler = StandardScaler().fit(train)
     test = pd.DataFrame(scaler.transform(data), columns = data.columns, index = data.index)
 
     final_model_rf = RandomForestClassifier(n_estimators=30,
@@ -125,7 +125,7 @@ def predict_success(campaign, cellular, duration, education,
                                             random_state = 99)
     
 
-    final_model = final_model_rf.fit(X2_train, y2_train)
+    final_model = final_model_rf.fit()
     final_model.predict(test)
     predict_proba_test = final_model.predict_proba(test)
     predict_proba_test
